@@ -3065,16 +3065,18 @@ h1, h2, h3, h4 {
 
 .illustration-info {
   display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .illustration-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.65rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
   line-height: 1.2;
   color: var(--text-primary);
+  margin: 0;
 }
 
 .illustration-desc {
@@ -3084,13 +3086,13 @@ h1, h2, h3, h4 {
 }
 
 .illustration-action-row {
-  margin-top: auto;
-  padding-top: 0.8rem;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .illustration-zoom-btn {
   font-size: 0.84rem;
-  padding: 0.75rem 1.4rem;
+  padding: 0.65rem 1.25rem;
 }
 
 @media (max-width: 700px) {
@@ -3104,13 +3106,22 @@ h1, h2, h3, h4 {
     max-height: 48vh;
   }
 
+  .illustration-info {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .illustration-title {
     font-size: 1.45rem;
   }
+}
 
-  .illustration-desc {
-    font-size: 0.95rem;
-    line-height: 1.65;
+@media (max-width: 480px) {
+  .illustration-info {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
   }
 
   .illustration-action-row .btn-p5 {
