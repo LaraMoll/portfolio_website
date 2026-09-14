@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illustrations — Lara Mollaoglu Portfolio</title>
+  <meta name="description" content="Drawings and digital art gallery by Lara Mollaoglu — character design, cyberpunk aesthetics, and poster art.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link" aria-label="Lara Mollaoglu Home">
+        <!-- Dark espresso backing so white in logo shows up crisply -->
+        <div class="brand-logo-frame">
+          <img src="images/logo.png" alt="Lara Mollaoglu Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Lara Mollaoglu</span>
+          <span class="brand-sub">CMD Student • Digital Adventurer</span>
+        </div>
+      </a>
+
+      <div class="header-controls">
+        <button class="ctrl-btn" id="replayIntroBtn" title="Play reading cafe bookmark menu">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-btn);">✦ My Intro</span>
+        </button>
+
+        <!-- Palette Switcher -->
+        <button class="ctrl-btn" id="paletteToggleBtn" title="Switch between 3 curated cafe palettes" style="padding: 0.45rem 0.85rem;">
+          <span id="paletteLabel" style="font-size: 0.78rem; font-weight: 700; color: var(--text-secondary);">Strawberry Matcha</span>
+        </button>
+
+        <button class="ctrl-btn ctrl-btn-icon" id="themeToggleBtn" aria-label="Toggle theme">
+          <span id="themeIcon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Right-Side Navigation Dock -->
+  <nav class="p5-nav-dock" aria-label="Portfolio Command Navigation">
+    <a href="index.html" class="p5-nav-item" title="Home Page">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">01</span>
+          <span class="p5-nav-label">START</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="projects.html" class="p5-nav-item" title="Projects & Case Studies">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">02</span>
+          <span class="p5-nav-label">PROJECTS</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="about.html" class="p5-nav-item" title="About Lara & Ambitions">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">03</span>
+          <span class="p5-nav-label">ABOUT ME</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="illustrations.html" class="p5-nav-item active" title="Illustrations & Drawings">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">04</span>
+          <span class="p5-nav-label">DRAWINGS</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="contact.html" class="p5-nav-item" title="Contact & Calling Card">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">05</span>
+          <span class="p5-nav-label">CONNECT</span>
+        </div>
+      </div>
+    </a>
+  </nav>
+
+  <main class="page-header-spacing">
+    <div class="container">
+      
+      <!-- Page Title Header -->
+      <div class="section-header-block">
+        <div class="section-category">
+          <span class="p5-tag p5-tag-rose"><span>SKILL 04</span></span>
+          <span>Art & Free Time Sketches</span>
+        </div>
+        <h1 class="section-title">
+          Drawings <span style="font-size: 1.6rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400;">// Sketchbook & Digital Art</span>
+        </h1>
+        <p class="section-title-sub">
+          Drawing is where my ideas begin. When I'm not designing or coding, I love filling sketchbooks with character art, digital illustrations, and creative visual experiments.
+        </p>
+      </div>
+
+      <!-- Empty State Canvas for Lara's Future Drawings -->
+      <div class="empty-gallery-container">
+        <div class="empty-icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </div>
+        <span class="hero-hand-note" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--c-rose);">sketchbook in progress ✦</span>
+        <h2 class="empty-gallery-title">Drawings & Sketches Coming Soon</h2>
+        <p class="empty-gallery-desc">
+          This gallery is kept clean and open until I add my own personal illustrations, linework studies, and character drawings. Check back soon or connect with me to see what's on my drawing tablet!
+        </p>
+        <div class="empty-gallery-tags">
+          <span class="tag-pill">#DigitalIllustration</span>
+          <span class="tag-pill">#CharacterArt</span>
+          <span class="tag-pill">#FreeTimeSketches</span>
+          <span class="tag-pill">#VisualStorytelling</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content-row">
+      <div style="display: flex; align-items: center; gap: 0.9rem;">
+        <div class="brand-logo-frame" style="width: 52px; height: 32px; padding: 2px 4px;">
+          <img src="images/logo.png" alt="Lara logo" style="height: 22px; width: auto;">
+        </div>
+        <span class="footer-copy">
+          &copy; 2026 Lara Mollaoglu • Communication & Multimedia Design • Avans University of Applied Sciences Breda
+        </span>
+      </div>
+
+      <a href="#" class="footer-back-top">
+        <span>▲ Return to Top</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Fullscreen artwork preview">
+    <div class="lightbox-dialog">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close fullscreen preview">&times;</button>
+      <div class="lightbox-image-wrap">
+        <img src="" alt="Artwork Preview" id="lightboxImg" class="lightbox-img">
+      </div>
+      <div class="lightbox-caption-bar">
+        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        <p class="lightbox-desc" id="lightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

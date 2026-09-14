@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Lara Mollaoglu Portfolio</title>
+  <meta name="description" content="Projects by Lara Mollaoglu — Communication & Multimedia Design student exploring UX/UI, digital design, and packaging.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link" aria-label="Lara Mollaoglu Home">
+        <!-- Dark plum backing so white in logo is clearly visible -->
+        <div class="brand-logo-frame">
+          <img src="images/logo.png" alt="Lara Mollaoglu Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Lara Mollaoglu</span>
+          <span class="brand-sub">CMD Student • Digital Adventurer</span>
+        </div>
+      </a>
+
+      <div class="header-controls">
+        <button class="ctrl-btn" id="replayIntroBtn" title="Play reading cafe bookmark menu">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-btn);">✦ My Intro</span>
+        </button>
+
+        <!-- Palette Switcher -->
+        <button class="ctrl-btn" id="paletteToggleBtn" title="Switch between 3 curated cafe palettes" style="padding: 0.45rem 0.85rem;">
+          <span id="paletteLabel" style="font-size: 0.78rem; font-weight: 700; color: var(--text-secondary);">Strawberry Matcha</span>
+        </button>
+
+        <button class="ctrl-btn ctrl-btn-icon" id="themeToggleBtn" aria-label="Toggle theme">
+          <span id="themeIcon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Right-Side Navigation Dock -->
+  <nav class="p5-nav-dock" aria-label="Portfolio Command Navigation">
+    <a href="index.html" class="p5-nav-item" title="Home Page">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">01</span>
+          <span class="p5-nav-label">START</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="projects.html" class="p5-nav-item active" title="Projects & Case Studies">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">02</span>
+          <span class="p5-nav-label">PROJECTS</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="about.html" class="p5-nav-item" title="About Lara & Ambitions">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">03</span>
+          <span class="p5-nav-label">ABOUT ME</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="illustrations.html" class="p5-nav-item" title="Illustrations & Drawings">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">04</span>
+          <span class="p5-nav-label">DRAWINGS</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="contact.html" class="p5-nav-item" title="Contact & Calling Card">
+      <div class="p5-nav-btn">
+        <div class="p5-nav-btn-inner">
+          <span class="p5-nav-num">05</span>
+          <span class="p5-nav-label">CONNECT</span>
+        </div>
+      </div>
+    </a>
+  </nav>
+
+  <main class="page-header-spacing">
+    <div class="container">
+      
+      <!-- Page Title Header -->
+      <div class="section-header-block">
+        <div class="section-category">
+          <span class="p5-tag p5-tag-primary"><span>MISSION 02</span></span>
+          <span>Featured Design Projects</span>
+        </div>
+        <h1 class="section-title">
+          Projects <span style="font-size: 1.6rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400;">// Concept to Reality</span>
+        </h1>
+        <p class="section-title-sub">
+          Here is how I translate concepts into tactile, memorable designs. Exploring packaging, visual identity, print specifications, and digital interfaces with personality.
+        </p>
+      </div>
+
+      <!-- Featured Spotlight: Overdrive 2.4 (Can Packaging) -->
+      <article class="project-spotlight">
+        <div class="app-window spotlight-window">
+          
+          <div class="window-titlebar">
+            <div class="window-dots">
+              <span class="window-dot dot-1"></span>
+              <span class="window-dot dot-2"></span>
+              <span class="window-dot dot-3"></span>
+            </div>
+            <span class="window-title">cmd://portfolio/projects/overdrive-2.4-can.app</span>
+            <span class="window-badge">PACKAGING & IDENTITY</span>
+          </div>
+
+          <div class="window-content">
+            <div class="spotlight-card-body">
+              
+              <!-- Left: Hero Showcase Image -->
+              <div class="spotlight-card-hero" id="openGalleryCardTrigger" title="Click to view full photo gallery and brandbook">
+                <img src="images/blikje/blikje_mockup.jpg" alt="Overdrive 2.4 Cyberpunk Energy Drink Can Mockup" class="spotlight-card-img">
+                <div class="hero-badge-overlay">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <span>250ml 360° Wrap • 27-Page Brandbook Reader Inside</span>
+                </div>
+              </div>
+
+              <!-- Right: Project Summary & Dual Modal Trigger Buttons -->
+              <div class="spotlight-card-details">
+                <div class="spotlight-header-tags">
+                  <span class="tag-pill active">#PackagingDesign</span>
+                  <span class="tag-pill">#CharacterIllustration</span>
+                  <span class="tag-pill">#IdentityDesign</span>
+                  <span class="tag-pill">#PrintDesign</span>
+                </div>
+
+                <h2 class="spotlight-title font-serif">
+                  Overdrive // 2.4 — Cyberpunk Identity Design
+                </h2>
+
+                <div class="concept-callout">
+                  “Creating a complete visual identity instead of just designing a can.”
+                </div>
+
+                <p class="spotlight-concept-teaser">
+                  A Year 1 CMD branding project exploring retro sci-fi themes, cyberpunk character design, a 360° 250ml print wrap, and an A2 brand world poster.
+                </p>
+
+                <div class="project-specs-grid">
+                  <div>
+                    <div class="spec-item-title">Role</div>
+                    <div class="spec-item-value">Concept, Illustration, Packaging</div>
+                  </div>
+                  <div>
+                    <div class="spec-item-title">Institution</div>
+                    <div class="spec-item-value">Avans University CMD Breda</div>
+                  </div>
+                  <div>
+                    <div class="spec-item-title">Year / Scope</div>
+                    <div class="spec-item-value">Year 1 • Identity & Packaging</div>
+                  </div>
+                  <div>
+                    <div class="spec-item-title">Tools Used</div>
+                    <div class="spec-item-value">Illustrator, Photoshop, Print Specs</div>
+                  </div>
+                </div>
+
+                <!-- Dual Action Modal Buttons (Navigation-bar styled) -->
+                <div class="modal-trigger-action-row">
+                  <button class="project-modal-btn btn-story" id="openStoryModalBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>📖 Read Story</span>
+                  </button>
+
+                  <button class="project-modal-btn btn-gallery" id="openGalleryModalBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>🖼️ View Photos & Brandbook</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Featured Spotlight 02: Cozy Farm (Python RPG & Pixel Art) -->
+      <article class="project-spotlight" style="margin-top: 3.5rem;">
+        <div class="app-window spotlight-window">
+          
+          <div class="window-titlebar">
+            <div class="window-dots">
+              <span class="window-dot dot-1"></span>
+              <span class="window-dot dot-2"></span>
+              <span class="window-dot dot-3"></span>
+            </div>
+            <span class="window-title">cmd://portfolio/projects/cozy-farm-rpg.py</span>
+            <span class="window-badge">PYTHON GAME & PIXEL ART</span>
+          </div>
+
+          <div class="window-content">
+            <div class="spotlight-card-body">
+              
+              <!-- Left: Hero Showcase Image -->
+              <div class="spotlight-card-hero" id="openCozyGalleryCardTrigger" title="Click to view full photo gallery and presentation">
+                <img src="images/cozy_farm/cozy_farm_hero.png" alt="Cozy Farm Python RPG Character Sprites & Game Systems" class="spotlight-card-img">
+                <div class="hero-badge-overlay">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <span>Interactive Python Engine • Custom Character Sprites Inside</span>
+                </div>
+              </div>
+
+              <!-- Right: Project Summary & Dual Modal Trigger Buttons -->
+              <div class="spotlight-card-details">
+                <div class="spotlight-header-tags">
+                  <span class="tag-pill active">#PythonGame</span>
+                  <span class="tag-pill">#PixelArt</span>
+                  <span class="tag-pill">#CharacterCreator</span>
+                  <span class="tag-pill">#GameDesign</span>
+                </div>
+
+                <h2 class="spotlight-title font-serif">
+                  Cozy Farm // 1.0 — Python RPG & Character Customizer
+                </h2>
+
+                <div class="concept-callout">
+                  “Leaving the busy city accounting life behind to cultivate a cozy, story-rich farming adventure.”
+                </div>
+
+                <p class="spotlight-concept-teaser">
+                  An interactive, text-driven farming simulation and role-playing game developed in Python during Challenge Week. Features an extensive character creator (customizing skin tones, hairstyles, body types, and accessories), dialogue mechanics with townsfolk like Annie the Blacksmith, apple foraging quests, and brain-teasing riddles, accompanied by handcrafted retro pixel art characters.
+                </p>
+
+                <div class="project-specs-grid">
+                  <div>
+                    <div class="spec-item-title">Role</div>
+                    <div class="spec-item-value">Concept, Python Dev, Pixel Art, Lore</div>
+                  </div>
+                  <div>
+                    <div class="spec-item-title">Institution</div>
+                    <div class="spec-item-value">Challenge Week • Creative Tech / HR</div>
+                  </div>
+                  <div>
+                    <div class="spec-item-title">Year / Scope</div>
+                    <div class="spec-item-value">Year 1 • Python RPG & Pixel Art</div>
+                  </div>
+                  <div>
+                    <div class="spec-item-title">Tools Used</div>
+                    <div class="spec-item-value">Python 3, Pixel Art, Logic Engine, Git</div>
+                  </div>
+                </div>
+
+                <!-- Dual Action Modal Buttons (Navigation-bar styled) -->
+                <div class="modal-trigger-action-row">
+                  <button class="project-modal-btn btn-story" id="openCozyStoryModalBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>📖 Read Game Story & Code</span>
+                  </button>
+
+                  <button class="project-modal-btn btn-gallery" id="openCozyGalleryModalBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>🎨 View Pixel Arts & Slides</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content-row">
+      <div style="display: flex; align-items: center; gap: 0.9rem;">
+        <div class="brand-logo-frame" style="width: 52px; height: 32px; padding: 2px 4px;">
+          <img src="images/logo.png" alt="Lara logo" style="height: 22px; width: auto;">
+        </div>
+        <span class="footer-copy">
+          &copy; 2026 Lara Mollaoglu • Communication & Multimedia Design • Avans University of Applied Sciences Breda
+        </span>
+      </div>
+
+      <a href="#" class="footer-back-top">
+        <span>▲ Return to Top</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Project Story Modal -->
+  <div class="cafe-custom-modal" id="projectStoryModal" role="dialog" aria-modal="true" aria-label="Project Story & Process Modal">
+    <div class="cafe-modal-backdrop"></div>
+    <div class="cafe-modal-container">
+      <div class="app-window modal-window">
+        <div class="window-titlebar">
+          <div class="window-dots">
+            <span class="window-dot dot-1"></span>
+            <span class="window-dot dot-2"></span>
+            <span class="window-dot dot-3"></span>
+          </div>
+          <span class="window-title">cmd://portfolio/overdrive-2.4/project-story.doc</span>
+          <button class="modal-close-icon" id="closeStoryModalBtn" aria-label="Close story modal">&times;</button>
+        </div>
+
+        <div class="window-content modal-scrollable-content">
+          <div class="modal-header-block">
+            <div class="spotlight-header-tags">
+              <span class="tag-pill active">#PackagingDesign</span>
+              <span class="tag-pill">#CharacterIllustration</span>
+              <span class="tag-pill">#IdentityDesign</span>
+              <span class="tag-pill">#PrintDesign</span>
+            </div>
+            <h2 class="spotlight-title font-serif" style="margin-top: 0.8rem;">
+              Overdrive // 2.4 — Cyberpunk Identity Design Story
+            </h2>
+          </div>
+
+          <div class="concept-callout">
+            “Creating a complete visual identity instead of just designing a can.”
+          </div>
+
+          <div class="modal-text-body">
+            <p class="spotlight-concept">
+              In the first year of my study, we had a project about branding (identity design), where I got the cyberpunk energy drink as my theme. As someone who is actually very interested in retro and sci-fi things, I was very excited about this project and started looking for ideas online.
+            </p>
+
+            <p class="spotlight-concept">
+              I started sketching specific things that reminded me of cyberpunk. Eventually, I found out that a character was very interesting to most people, so I decided to continue with that. From there, I went for a complete cyberpunk theme and searched for fonts that gave the same feeling. I also started experimenting with different colors, shapes and graphic elements to make everything fit together.
+            </p>
+
+            <p class="spotlight-concept">
+              The main goal was to create a complete visual identity instead of just designing a can. The energy drink has a 250ml can with a full 360° design, so the design continues all the way around the can. I wanted it to feel like it belonged in a cyberpunk world, with a dark futuristic look, neon-like colors and digital and technological elements.
+            </p>
+
+            <p class="spotlight-concept">
+              I also created an A2 poster to expand the brand. Instead of simply putting the can on the poster, I used the same visual elements and cyberpunk style to create more of a brand world. The poster is meant to show the feeling and atmosphere of the brand rather than just being an advertisement for the drink.
+            </p>
+
+            <p class="spotlight-concept">
+              I had never done any branding before, so this was quite hard for me. I had to learn how to make different design elements work together and still make the brand recognizable. Through this project, I learned how to do research online and use that research to develop my own ideas. I also learned more about typography, colors, composition and how these things can help communicate the feeling of a brand.
+            </p>
+          </div>
+
+          <div class="project-specs-grid" style="margin-top: 2rem;">
+            <div>
+              <div class="spec-item-title">Role</div>
+              <div class="spec-item-value">Concept, Illustration, Print Packaging</div>
+            </div>
+            <div>
+              <div class="spec-item-title">Institution</div>
+              <div class="spec-item-value">Avans University CMD Breda</div>
+            </div>
+            <div>
+              <div class="spec-item-title">Year / Scope</div>
+              <div class="spec-item-value">Year 1 • Identity & Packaging</div>
+            </div>
+            <div>
+              <div class="spec-item-title">Tools Used</div>
+              <div class="spec-item-value">Illustrator, Photoshop, Print Specs</div>
+            </div>
+          </div>
+
+          <div class="project-action-row" style="margin-top: 1.5rem;">
+            <a href="images/blikje/LaraMollaoglu_brandbook (1).pdf" target="_blank" class="pdf-link-btn" title="Open Full Brandbook PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <span>View Brandbook PDF (27 Pages)</span>
+            </a>
+            <a href="images/blikje/LaraMollaoglu_Drukwerk_Blikje.pdf" target="_blank" class="pdf-link-btn" title="Open Can Wrap PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>View Can Wrap PDF (Print Design)</span>
+            </a>
+            <a href="images/blikje/LaraMollaoglu_drukwerk_poster.pdf" target="_blank" class="pdf-link-btn" title="Open Poster PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>View Poster PDF (A2 Print)</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Visual Gallery & Brandbook Modal -->
+  <div class="cafe-custom-modal" id="projectGalleryModal" role="dialog" aria-modal="true" aria-label="Project Visual Gallery & Brandbook Modal">
+    <div class="cafe-modal-backdrop"></div>
+    <div class="cafe-modal-container cafe-modal-container-wide">
+      <div class="app-window modal-window">
+        <div class="window-titlebar">
+          <div class="window-dots">
+            <span class="window-dot dot-1"></span>
+            <span class="window-dot dot-2"></span>
+            <span class="window-dot dot-3"></span>
+          </div>
+          <span class="window-title">cmd://portfolio/overdrive-2.4/visual-gallery.app</span>
+          <button class="modal-close-icon" id="closeGalleryModalBtn" aria-label="Close gallery modal">&times;</button>
+        </div>
+
+        <div class="window-content modal-scrollable-content">
+          
+          <!-- Gallery Mode Bar -->
+          <div class="brandbook-mode-bar">
+            <button class="brandbook-mode-btn active" id="modeAssetsBtn">
+              <span>✦ Brand Assets (Can & Poster)</span>
+            </button>
+            <button class="brandbook-mode-btn" id="modeFlipbookBtn">
+              <span>📖 Brandbook Reader (27 Pages)</span>
+            </button>
+          </div>
+
+          <div class="main-stage-frame" id="spotlightStageFrame" style="height: 520px; aspect-ratio: auto;">
+            <img 
+              src="images/blikje/blikje_mockup.jpg" 
+              alt="Overdrive 2.4 Energy Drink Can Mockup" 
+              id="spotlightMainImg" 
+              class="main-stage-img"
+              data-full="images/blikje/blikje_mockup.jpg"
+              data-title="Overdrive 2.4 — Trio Can Mockup"
+              data-desc="Brand packaging design showing front, side data panel, and nutrition wrap"
+            >
+            <div class="zoom-overlay-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Click for Fullscreen View</span>
+            </div>
+          </div>
+
+          <!-- Interactive Brandbook Controls (Appears in Brandbook Mode) -->
+          <div class="brandbook-nav-controls" id="brandbookNavControls" style="display: none;">
+            <button class="brandbook-arrow-btn" id="brandbookPrevBtn" title="Previous Page">
+              <span>◄ PREV</span>
+            </button>
+            <div class="brandbook-page-badge" id="brandbookPageBadge">
+              <span>PAGE 01 / 27</span>
+            </div>
+            <button class="brandbook-arrow-btn" id="brandbookNextBtn" title="Next Page">
+              <span>NEXT ►</span>
+            </button>
+          </div>
+
+          <!-- Thumbnails for Brand Assets mode -->
+          <div class="thumb-strip" id="brandAssetsThumbStrip" style="margin-top: 1rem;">
+            <div class="thumb-item active" 
+                 data-img="images/blikje/blikje_mockup.jpg" 
+                 data-title="Overdrive 2.4 — Trio Can Mockup" 
+                 data-desc="3D condensation render showing the full product line angles">
+              <img src="images/blikje/blikje_mockup.jpg" alt="Trio Mockup">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/blikje/blikje_mockup2.jpg" 
+                 data-title="Overdrive 2.4 — Hero Can Focus" 
+                 data-desc="Single can spotlight showing central cyberpunk anime character illustration">
+              <img src="images/blikje/blikje_mockup2.jpg" alt="Single Can Mockup">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/blikje/blikje_wrap.png" 
+                 data-title="Overdrive 2.4 — 250ml Full Can Wrap Layout" 
+                 data-desc="Full flat packaging artwork with nutrition panel, barcode, typography, and QR code">
+              <img src="images/blikje/blikje_wrap.png" alt="Packaging Wrap">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/blikje/blikje_poster.png" 
+                 data-title="Overdrive 2.4 — Promo Poster" 
+                 data-desc="Awaken your inner power — Promotional poster for Avans CMD Identity Design Series">
+              <img src="images/blikje/blikje_poster.png" alt="Promo Poster">
+            </div>
+          </div>
+
+          <!-- PDF Download Buttons -->
+          <div class="project-action-row" style="margin-top: 1.5rem;">
+            <a href="images/blikje/LaraMollaoglu_brandbook (1).pdf" target="_blank" class="pdf-link-btn" title="Open Full Brandbook PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <span>View Brandbook PDF (27 Pages)</span>
+            </a>
+            <a href="images/blikje/LaraMollaoglu_Drukwerk_Blikje.pdf" target="_blank" class="pdf-link-btn" title="Open Can Wrap PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>View Can Wrap PDF (Print Design)</span>
+            </a>
+            <a href="images/blikje/LaraMollaoglu_drukwerk_poster.pdf" target="_blank" class="pdf-link-btn" title="Open Poster PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>View Poster PDF (A2 Print)</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cozy Farm Story Modal -->
+  <div class="cafe-custom-modal" id="cozyFarmStoryModal" role="dialog" aria-modal="true" aria-label="Cozy Farm Story & Code Modal">
+    <div class="cafe-modal-backdrop"></div>
+    <div class="cafe-modal-container">
+      <div class="app-window modal-window">
+        <div class="window-titlebar">
+          <div class="window-dots">
+            <span class="window-dot dot-1"></span>
+            <span class="window-dot dot-2"></span>
+            <span class="window-dot dot-3"></span>
+          </div>
+          <span class="window-title">cmd://portfolio/cozy-farm-1.0/game-story-code.py</span>
+          <button class="modal-close-icon" id="closeCozyStoryModalBtn" aria-label="Close story modal">&times;</button>
+        </div>
+
+        <div class="window-content modal-scrollable-content">
+          <div class="modal-header-block">
+            <div class="spotlight-header-tags">
+              <span class="tag-pill active">#PythonGame</span>
+              <span class="tag-pill">#PixelArt</span>
+              <span class="tag-pill">#CharacterCreator</span>
+              <span class="tag-pill">#GameDesign</span>
+            </div>
+            <h2 class="spotlight-title font-serif" style="margin-top: 0.8rem;">
+              Cozy Farm // 1.0 — Python RPG & Character Customizer Story
+            </h2>
+          </div>
+
+          <div class="concept-callout">
+            “Leaving the busy city accounting life behind to cultivate a cozy, story-rich farming adventure.”
+          </div>
+
+          <div class="modal-text-body">
+            <p class="spotlight-concept">
+              <strong>Cozy Farm</strong> was conceptualized and developed during an intensive, creative Challenge Week. As a multidisciplinary design student passionate about games, storytelling, and code, I wanted to build a heartwarming, retro-styled text RPG combined with handcrafted pixel art character avatars.
+            </p>
+
+            <p class="spotlight-concept">
+              The storyline follows a burned-out city accountant seeking a quieter life. After spotting an ad from a kindly grandmother selling her countryside homestead, the player buys the property and sets off on a rural adventure filled with farming, foraging, NPC conversations, and brain-teasing quests.
+            </p>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin: 1.6rem 0 0.8rem; color: var(--text-primary);">
+              🌻 The Character Customization Engine (<code>make_your_character.py</code>)
+            </h3>
+            <p class="spotlight-concept">
+              A core highlight of the project is the modular character creator. Instead of fixed avatars, players customize their farmer through guided terminal prompts backed by input-validation loops:
+            </p>
+            <ul style="margin: 0.8rem 0 1.2rem 1.6rem; color: var(--text-secondary); line-height: 1.8;">
+              <li><strong>Skin Tones:</strong> 6 distinct tones (Pale, Fair, Medium, Olive, Naturally brown, Very dark).</li>
+              <li><strong>Hair Colors:</strong> Blond, Brown, Black, and Ginger.</li>
+              <li><strong>Eye Colors:</strong> Blue, Green, Brown, Black, and Grey.</li>
+              <li><strong>Body Types:</strong> Muscular, Curvy, and Skinny.</li>
+              <li><strong>Accessories:</strong> Straw hat, Glasses, Ribbon, Fedora, Necklace, Bracelet, and Earrings.</li>
+            </ul>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin: 1.6rem 0 0.8rem; color: var(--text-primary);">
+              ⚒️ Quests, Map Exploration & Riddles (<code>cozy_farming_level_1.py</code>)
+            </h3>
+            <p class="spotlight-concept">
+              Upon arriving at their newly named farm, the player must seek out tools. Guided by an in-game world map (spanning West Lake, North Mines, East Town, and the Southern Beach), they journey to Annie the blacksmith. Annie trades rusty starter tools in exchange for 5 fresh apples from the fruit tree forest. Along the way, players face riddle guardians with limited attempts, earning HP rewards upon solving them.
+            </p>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin: 1.6rem 0 0.8rem; color: var(--text-primary);">
+              ⏱️ Timers, Color Games & Team Git Workflow
+            </h3>
+            <p class="spotlight-concept">
+              We implemented time-based tension using <code>one_minute_timer.py</code> and an experimental color game demo. Collaboration with my project partner Somaya was managed through GitHub using feature branches, verifying each pull request before merging into the main game build.
+            </p>
+          </div>
+
+          <div class="project-specs-grid" style="margin-top: 2rem;">
+            <div>
+              <div class="spec-item-title">Role</div>
+              <div class="spec-item-value">Concept, Python Dev, Pixel Art, Lore</div>
+            </div>
+            <div>
+              <div class="spec-item-title">Institution</div>
+              <div class="spec-item-value">Challenge Week • Creative Tech / HR</div>
+            </div>
+            <div>
+              <div class="spec-item-title">Year / Scope</div>
+              <div class="spec-item-value">Year 1 • Python RPG & Pixel Art</div>
+            </div>
+            <div>
+              <div class="spec-item-title">Tools Used</div>
+              <div class="spec-item-value">Python 3, Pixel Art, Logic Engine, Git</div>
+            </div>
+          </div>
+
+          <div class="project-action-row" style="margin-top: 1.5rem;">
+            <a href="https://github.com/LaraMoll/cozy_farming" target="_blank" rel="noopener noreferrer" class="pdf-link-btn" title="View Project on GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>View Source Code on GitHub ➔</span>
+            </a>
+            <a href="images/cozy_farm/Cozy_Farm_ppt.pdf" target="_blank" class="pdf-link-btn" title="Open Presentation PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <span>View Presentation PDF (Slides)</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cozy Farm Pixel Art & Visuals Modal -->
+  <div class="cafe-custom-modal" id="cozyFarmGalleryModal" role="dialog" aria-modal="true" aria-label="Cozy Farm Pixel Art Gallery Modal">
+    <div class="cafe-modal-backdrop"></div>
+    <div class="cafe-modal-container cafe-modal-container-wide">
+      <div class="app-window modal-window">
+        <div class="window-titlebar">
+          <div class="window-dots">
+            <span class="window-dot dot-1"></span>
+            <span class="window-dot dot-2"></span>
+            <span class="window-dot dot-3"></span>
+          </div>
+          <span class="window-title">cmd://portfolio/cozy-farm-1.0/pixel-gallery.app</span>
+          <button class="modal-close-icon" id="closeCozyGalleryModalBtn" aria-label="Close gallery modal">&times;</button>
+        </div>
+
+        <div class="window-content modal-scrollable-content">
+          <div class="main-stage-frame" id="cozyStageFrame" style="height: 480px; aspect-ratio: auto; background: #14121e; display: flex; align-items: center; justify-content: center;">
+            <img 
+              src="images/cozy_farm/pixelart_lara.png" 
+              alt="Pixel Art Character Lara" 
+              id="cozyMainImg" 
+              class="main-stage-img"
+              style="image-rendering: pixelated; object-fit: contain; max-height: 420px; width: auto;"
+              data-full="images/cozy_farm/pixelart_lara.png"
+              data-title="Pixel Art Character — Farmer Lara"
+              data-desc="Handcrafted retro pixel art avatar with straw hat and denim overalls"
+            >
+            <div class="zoom-overlay-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Click for Fullscreen View</span>
+            </div>
+          </div>
+
+          <!-- Thumbnails for Pixel Arts and Visuals -->
+          <div class="thumb-strip" id="cozyThumbStrip" style="margin-top: 1rem;">
+            <div class="thumb-item active" 
+                 data-img="images/cozy_farm/cozy_farm_hero.png" 
+                 data-title="Cozy Farm 1.0 — Game Showcase Banner" 
+                 data-desc="Hand-drawn Cozy Farm logo with custom retro pixel art avatars against a botanical background">
+              <img src="images/cozy_farm/cozy_farm_hero.png" alt="Cozy Farm Hero Showcase">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/cozy_farm/pixelart_lara.png" 
+                 data-title="Pixel Art — Farmer Lara" 
+                 data-desc="Custom pixel art character avatar with straw hat, brown hair, and farm overalls">
+              <img src="images/cozy_farm/pixelart_lara.png" alt="Farmer Lara Pixel Art" style="image-rendering: pixelated;">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/cozy_farm/pixelart_somaya.png" 
+                 data-title="Pixel Art — Character Somaya" 
+                 data-desc="Custom pixel art sprite with black blazer and gold chain accessory">
+              <img src="images/cozy_farm/pixelart_somaya.png" alt="Somaya Pixel Art" style="image-rendering: pixelated;">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/cozy_farm/cozy_farm_logo.png" 
+                 data-title="Hand-drawn Cozy Farm Title Art" 
+                 data-desc="Handcrafted pastel title typography with gardening bear trowel, sparkles, and leaf">
+              <img src="images/cozy_farm/cozy_farm_logo.png" alt="Cozy Farm Logo">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/cozy_farm/cozy_slide_2.png" 
+                 data-title="Game Systems & Character Presentation Slide" 
+                 data-desc="Slide showcasing in-game systems: character customization, harvesting, quests, and riddles">
+              <img src="images/cozy_farm/cozy_slide_2.png" alt="Game Features Slide">
+            </div>
+            <div class="thumb-item" 
+                 data-img="images/cozy_farm/cozy_farm_banner.jpg" 
+                 data-title="Presentation Title Slide" 
+                 data-desc="Floral pastel aesthetic presentation backdrop created for Challenge Week pitch">
+              <img src="images/cozy_farm/cozy_farm_banner.jpg" alt="Presentation Banner">
+            </div>
+          </div>
+
+          <div class="project-action-row" style="margin-top: 1.5rem;">
+            <a href="https://github.com/LaraMoll/cozy_farming" target="_blank" rel="noopener noreferrer" class="pdf-link-btn" title="View Source Code on GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>View Source Code on GitHub ➔</span>
+            </a>
+            <a href="images/cozy_farm/Cozy_Farm_ppt.pdf" target="_blank" class="pdf-link-btn" title="Open Presentation PDF in new tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <span>View Presentation PDF (Slides)</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Fullscreen artwork preview">
+    <div class="lightbox-dialog">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close fullscreen preview">&times;</button>
+      <div class="lightbox-image-wrap">
+        <img src="" alt="Artwork Preview" id="lightboxImg" class="lightbox-img">
+      </div>
+      <div class="lightbox-caption-bar">
+        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        <p class="lightbox-desc" id="lightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

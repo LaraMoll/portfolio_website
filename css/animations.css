@@ -1,0 +1,786 @@
+/* ==========================================================================
+   ANIMATIONS & CUTE BOOKMARK / CAFE MENU INTRO
+   Theme: Reading, Eating & Cozy Cafe Adventure
+   Palette:
+   - #F7F3EE (70% Background)
+   - #E9E3EC (15% Surface)
+   - #302631 (10% Text)
+   - #80658C (5% Accent Button)
+   - #B4879B & #A5AD98 (Details)
+   ========================================================================== */
+
+@keyframes bookmarkDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) rotate(-5deg) scale(0.95);
+    filter: blur(8px);
+  }
+  70% {
+    transform: translateY(8px) rotate(1.2deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(-1deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+.p5-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 33, 38, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.5rem;
+}
+
+.p5-intro-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.p5-intro-shard-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bookmark-backdrop-ribbon {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 320px;
+  height: 120%;
+  background: rgba(180, 135, 155, 0.12);
+  border-left: 2px dashed rgba(180, 135, 155, 0.35);
+  border-right: 2px dashed rgba(180, 135, 155, 0.35);
+}
+
+/* Cute Bookmark / Cafe Menu Card Envelope */
+.cafe-bookmark-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 540px;
+  animation: bookmarkDropIn 0.7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Bookmark Ribbon / Fabric Tag at Top */
+.bookmark-fabric-ribbon {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 48px;
+  background: var(--accent-rose);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 4px 12px rgba(25, 33, 38, 0.25);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--text-primary);
+  border-bottom: none;
+}
+
+.bookmark-eyelet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--text-primary);
+}
+
+/* Main Bookmark / Cafe Menu Body */
+.cafe-menu-card {
+  position: relative;
+  background: #FFFFFF; /* Pure Crisp White Paper for maximum contrast & zero muddiness */
+  color: var(--text-primary);
+  padding: 3.2rem 2.8rem 2.8rem;
+  border-radius: 20px;
+  border: 2.5px solid var(--text-primary);
+  box-shadow: 0 24px 60px rgba(25, 33, 38, 0.22), 6px 8px 0px var(--accent-caramel);
+  position: relative;
+  overflow: hidden;
+}
+
+.cafe-menu-card::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  border-top: 2px dashed rgba(30, 37, 43, 0.15);
+}
+
+.cafe-menu-card::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  border-top: 2px dashed rgba(30, 37, 43, 0.15);
+}
+
+.cafe-menu-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.4rem;
+  transition: transform var(--trans-fast), color var(--trans-fast);
+  z-index: 12;
+}
+
+.cafe-menu-close:hover {
+  color: var(--accent-rose);
+  transform: rotate(90deg) scale(1.15);
+}
+
+/* Top Stamp Row */
+.cafe-menu-stamp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.cafe-table-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--text-primary);
+  color: #FFFFFF;
+  border: 1.5px solid var(--accent-caramel);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cafe-date-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0;
+}
+
+/* Brand Emblem: Deep slate-navy frame so white orbital rings & blue-ish L pop with clarity */
+.cafe-menu-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.cafe-logo-emblem {
+  width: 96px;
+  height: 60px;
+  border-radius: 12px;
+  background: #1B2428; /* Deep slate-navy backing so white rings and teal L pop */
+  border: 2px solid var(--accent-caramel);
+  box-shadow: 3px 4px 0px var(--accent-caramel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  transform: rotate(-2deg);
+}
+
+.cafe-logo-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Celestial radiance so white orbital rings and blue-ish L pop with clarity */
+  filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 8px rgba(41, 66, 70, 0.8));
+}
+
+.cafe-brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.cafe-brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-teal);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+/* Headline / Tagline in Bookmark */
+.cafe-menu-tagline {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--bg-card-subtle);
+  border-left: 4px solid var(--accent-rose);
+  border-right: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.95rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.8rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Menu Items */
+.cafe-menu-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.cafe-menu-item-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(30, 37, 43, 0.22);
+  padding-bottom: 0.45rem;
+}
+
+.cafe-item-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cafe-item-name span.item-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #FFFFFF;
+  background: var(--text-primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.cafe-item-sub {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cafe-menu-handnote {
+  font-family: var(--font-hand);
+  font-size: 1.7rem;
+  color: var(--accent-rose);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  display: block;
+}
+
+/* Action Button */
+.cafe-menu-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.cafe-enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--text-primary);
+  color: #FFFFFF;
+  border: 2px solid var(--accent-caramel);
+  padding: 0.95rem 2.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: skewX(-8deg);
+  box-shadow: 4px 4px 0px var(--accent-caramel);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cafe-enter-btn span {
+  display: inline-block;
+  transform: skewX(8deg);
+}
+
+.cafe-enter-btn:hover {
+  background: var(--accent-rose);
+  border-color: var(--text-primary);
+  box-shadow: 6px 6px 0px var(--text-primary);
+  transform: skewX(-8deg) translate(-2px, -2px);
+}
+
+.cafe-dismiss-hint {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   PALETTE-SPECIFIC INTRO MODAL STYLES (LIGHT & DARK MODE DYNAMIC ADAPTATION)
+   ========================================================================== */
+
+/* PALETTE 1: STRAWBERRY MATCHA (LIGHT MODE) */
+[data-theme="light"][data-palette="palette1"] .bookmark-fabric-ribbon,
+[data-theme="light"] .bookmark-fabric-ribbon {
+  background: var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette1"] .cafe-menu-card,
+[data-theme="light"] .cafe-menu-card {
+  box-shadow: 0 24px 60px rgba(30, 37, 43, 0.22), 6px 8px 0px var(--accent-caramel);
+}
+[data-theme="light"][data-palette="palette1"] span.item-num,
+[data-theme="light"] span.item-num {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+}
+
+/* PALETTE 2: LAVENDER BOOKSHOP (LIGHT MODE) */
+[data-theme="light"][data-palette="palette2"] .bookmark-fabric-ribbon {
+  background: var(--accent-btn);
+}
+[data-theme="light"][data-palette="palette2"] .cafe-menu-card {
+  box-shadow: 0 24px 60px rgba(48, 38, 49, 0.22), 6px 8px 0px var(--accent-btn);
+}
+[data-theme="light"][data-palette="palette2"] .cafe-table-stamp {
+  background: var(--accent-btn);
+  color: #FFFFFF;
+  border-color: var(--accent-caramel);
+}
+[data-theme="light"][data-palette="palette2"] .cafe-brand-sub {
+  color: var(--accent-btn);
+}
+[data-theme="light"][data-palette="palette2"] .cafe-menu-tagline {
+  border-left-color: var(--accent-btn);
+}
+[data-theme="light"][data-palette="palette2"] span.item-num {
+  background: var(--accent-btn);
+  color: #FFFFFF;
+}
+[data-theme="light"][data-palette="palette2"] .cafe-menu-handnote {
+  color: var(--accent-btn);
+}
+[data-theme="light"][data-palette="palette2"] .cafe-enter-btn {
+  background: var(--text-primary);
+  border-color: var(--accent-btn);
+  box-shadow: 4px 4px 0px var(--accent-btn);
+}
+[data-theme="light"][data-palette="palette2"] .cafe-enter-btn:hover {
+  background: var(--accent-btn);
+  border-color: var(--text-primary);
+  box-shadow: 6px 6px 0px var(--text-primary);
+}
+
+/* PALETTE 3: VANILLA ROSE LATTE (LIGHT MODE) */
+[data-theme="light"][data-palette="palette3"] .bookmark-fabric-ribbon {
+  background: var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette3"] .cafe-menu-card {
+  box-shadow: 0 24px 60px rgba(30, 37, 43, 0.22), 6px 8px 0px var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette3"] .cafe-table-stamp {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+  border-color: var(--accent-caramel);
+}
+[data-theme="light"][data-palette="palette3"] .cafe-brand-sub {
+  color: var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette3"] .cafe-menu-tagline {
+  border-left-color: var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette3"] span.item-num {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+}
+[data-theme="light"][data-palette="palette3"] .cafe-menu-handnote {
+  color: var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette3"] .cafe-enter-btn {
+  background: var(--text-primary);
+  border-color: var(--accent-rose);
+  box-shadow: 4px 4px 0px var(--accent-rose);
+}
+[data-theme="light"][data-palette="palette3"] .cafe-enter-btn:hover {
+  background: var(--accent-rose);
+  border-color: var(--text-primary);
+  box-shadow: 6px 6px 0px var(--text-primary);
+}
+
+/* DARK MODE INTRO CARD (PALETTE 1: STRAWBERRY MATCHA) */
+[data-theme="dark"] .cafe-menu-card,
+[data-theme="dark"][data-palette="palette1"] .cafe-menu-card {
+  background: #1D2B29;
+  color: #FAF8F5;
+  border: 2.5px solid var(--accent-rose);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.8), 6px 8px 0px var(--accent-rose);
+}
+[data-theme="dark"] .bookmark-fabric-ribbon,
+[data-theme="dark"][data-palette="palette1"] .bookmark-fabric-ribbon {
+  background: var(--accent-rose);
+  border-color: #FAF8F5;
+}
+[data-theme="dark"] .cafe-table-stamp,
+[data-theme="dark"][data-palette="palette1"] .cafe-table-stamp {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+  border: 1.5px solid var(--accent-caramel);
+}
+[data-theme="dark"] .cafe-date-stamp,
+[data-theme="dark"][data-palette="palette1"] .cafe-date-stamp,
+[data-theme="dark"] .cafe-brand-title,
+[data-theme="dark"][data-palette="palette1"] .cafe-brand-title {
+  color: #FAF8F5;
+}
+[data-theme="dark"] .cafe-brand-sub,
+[data-theme="dark"][data-palette="palette1"] .cafe-brand-sub {
+  color: var(--accent-caramel);
+}
+[data-theme="dark"] .cafe-menu-tagline,
+[data-theme="dark"][data-palette="palette1"] .cafe-menu-tagline {
+  background: #162220;
+  color: #FAF8F5;
+  border-left: 4px solid var(--accent-rose);
+  border-color: rgba(250, 248, 245, 0.15);
+}
+[data-theme="dark"] .cafe-item-name,
+[data-theme="dark"][data-palette="palette1"] .cafe-item-name {
+  color: #FAF8F5;
+}
+[data-theme="dark"] .cafe-item-name span.item-num,
+[data-theme="dark"][data-palette="palette1"] .cafe-item-name span.item-num {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+}
+[data-theme="dark"] .cafe-item-sub,
+[data-theme="dark"][data-palette="palette1"] .cafe-item-sub {
+  color: #C4D4D1;
+}
+[data-theme="dark"] .cafe-menu-handnote,
+[data-theme="dark"][data-palette="palette1"] .cafe-menu-handnote {
+  color: var(--accent-rose);
+}
+[data-theme="dark"] .cafe-enter-btn,
+[data-theme="dark"][data-palette="palette1"] .cafe-enter-btn {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+  border: 2px solid #FAF8F5;
+  box-shadow: 4px 4px 0px var(--accent-caramel);
+}
+[data-theme="dark"] .cafe-enter-btn:hover,
+[data-theme="dark"][data-palette="palette1"] .cafe-enter-btn:hover {
+  background: var(--accent-caramel);
+  color: #0F1716;
+  border-color: #FAF8F5;
+  box-shadow: 6px 6px 0px var(--accent-rose);
+}
+
+/* DARK MODE INTRO CARD (PALETTE 2: LAVENDER BOOKSHOP) */
+[data-theme="dark"][data-palette="palette2"] .cafe-menu-card {
+  background: #281F2C;
+  color: #F7F3EE;
+  border: 2.5px solid var(--accent-btn);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.8), 6px 8px 0px var(--accent-btn);
+}
+[data-theme="dark"][data-palette="palette2"] .bookmark-fabric-ribbon {
+  background: var(--accent-btn);
+  border-color: #F7F3EE;
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-table-stamp {
+  background: var(--accent-btn);
+  color: #FFFFFF;
+  border: 1.5px solid var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-date-stamp,
+[data-theme="dark"][data-palette="palette2"] .cafe-brand-title {
+  color: #F7F3EE;
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-brand-sub {
+  color: var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-menu-tagline {
+  background: #1F1822;
+  color: #F7F3EE;
+  border-left: 4px solid var(--accent-btn);
+  border-color: rgba(247, 243, 238, 0.15);
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-item-name {
+  color: #F7F3EE;
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-item-name span.item-num {
+  background: var(--accent-btn);
+  color: #FFFFFF;
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-item-sub {
+  color: #D8CFDC;
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-menu-handnote {
+  color: var(--accent-btn);
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-enter-btn {
+  background: var(--accent-btn);
+  color: #FFFFFF;
+  border: 2px solid #F7F3EE;
+  box-shadow: 4px 4px 0px var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette2"] .cafe-enter-btn:hover {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+  border-color: #F7F3EE;
+  box-shadow: 6px 6px 0px var(--accent-btn);
+}
+
+/* DARK MODE INTRO CARD (PALETTE 3: VANILLA ROSE LATTE) */
+[data-theme="dark"][data-palette="palette3"] .cafe-menu-card {
+  background: #2B2522;
+  color: #F1E4CC;
+  border: 2.5px solid var(--accent-rose);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.8), 6px 8px 0px var(--accent-rose);
+}
+[data-theme="dark"][data-palette="palette3"] .bookmark-fabric-ribbon {
+  background: var(--accent-rose);
+  border-color: #F1E4CC;
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-table-stamp {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+  border: 1.5px solid var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-date-stamp,
+[data-theme="dark"][data-palette="palette3"] .cafe-brand-title {
+  color: #F1E4CC;
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-brand-sub {
+  color: var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-menu-tagline {
+  background: #201B18;
+  color: #F1E4CC;
+  border-left: 4px solid var(--accent-rose);
+  border-color: rgba(241, 228, 204, 0.15);
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-item-name {
+  color: #F1E4CC;
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-item-name span.item-num {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-item-sub {
+  color: #DAC9AD;
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-menu-handnote {
+  color: var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-enter-btn {
+  background: var(--accent-rose);
+  color: #FFFFFF;
+  border: 2px solid #F1E4CC;
+  box-shadow: 4px 4px 0px var(--accent-caramel);
+}
+[data-theme="dark"][data-palette="palette3"] .cafe-enter-btn:hover {
+  background: var(--accent-caramel);
+  color: #161311;
+  border-color: #F1E4CC;
+  box-shadow: 6px 6px 0px var(--accent-rose);
+}
+
+.p5-intro-overlay.dismissing {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.p5-intro-overlay.dismissing .cafe-bookmark-wrapper {
+  transform: translateY(-40px) rotate(-4deg) scale(0.94);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   PERSONA 5 DYNAMIC HERO CUT-IN & PROJECT SLAM ANIMATIONS
+   ========================================================================== */
+.p5-cutin-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.p5-cutin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.22rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--text-primary);
+  color: var(--bg-canvas);
+  border-radius: 3px;
+  transform: skewX(-12deg);
+  box-shadow: 2.5px 3px 0px var(--accent-btn);
+  transition: all var(--trans-fast);
+}
+
+[data-theme="dark"] .p5-cutin-badge {
+  background: var(--accent-btn);
+  color: #FFFFFF;
+  box-shadow: 2.5px 3px 0px #000000;
+}
+
+.p5-cutin-title {
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.p5-cutin-box {
+  position: relative;
+  background: var(--bg-card-subtle);
+  border-left: 4px solid var(--accent-btn);
+  padding: 1.15rem 1.4rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.06);
+  transform: skewX(-2.5deg);
+  transition: all var(--trans-p5);
+}
+
+[data-theme="dark"] .p5-cutin-box {
+  background: rgba(255, 255, 255, 0.035);
+  border-left: 4px solid var(--accent-btn);
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.p5-cutin-box .showcase-desc {
+  margin-bottom: 0;
+  transform: skewX(2.5deg); /* Keep text upright and easily readable */
+}
+
+/* Persona 5 Cut-In Keyframes */
+@keyframes p5TagSnapIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-35px, -6px, 0) skewX(-16deg) scale(0.85);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(4px, 0, 0) skewX(-8deg) scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skewX(-12deg) scale(1);
+  }
+}
+
+@keyframes p5TitleSlashIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-45px, 12px, 0) skewX(-9deg) scale(0.96);
+    filter: blur(4px);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(6px, -2px, 0) skewX(1.5deg) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skewX(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes p5BoxSlamIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50px, 16px, 0) skewX(-10deg) scale(0.94);
+    filter: blur(3px);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(6px, -2px, 0) skewX(0deg) scale(1.02);
+    filter: blur(0);
+  }
+  85% {
+    transform: translate3d(-2px, 1px, 0) skewX(-3deg) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skewX(-2.5deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes p5FooterSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered triggers when .p5-slam-in is present */
+.showcase-story-col.p5-slam-in .hero-hand-note {
+  animation: p5FooterSlideIn 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+.showcase-story-col.p5-slam-in .p5-cutin-badge {
+  animation: p5TagSnapIn 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.04s forwards;
+}
+
+.showcase-story-col.p5-slam-in .showcase-title {
+  animation: p5TitleSlashIn 0.42s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.08s forwards;
+}
+
+.showcase-story-col.p5-slam-in .p5-cutin-box {
+  animation: p5BoxSlamIn 0.46s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.14s forwards;
+}
+
+.showcase-story-col.p5-slam-in .showcase-footer-strip {
+  animation: p5FooterSlideIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
