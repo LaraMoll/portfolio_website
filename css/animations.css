@@ -784,3 +784,50 @@
   animation: p5FooterSlideIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
+/* Responsive Intro Modal on Smartphones (< 600px) */
+@media (max-width: 600px) {
+  .p5-intro-overlay {
+    padding: 1rem 0.75rem;
+  }
+  .cafe-bookmark-wrapper {
+    max-width: 100%;
+  }
+  .bookmark-backdrop-ribbon {
+    width: 220px;
+  }
+  .cafe-menu-card {
+    padding: 2.2rem 1.35rem 1.8rem;
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+  .cafe-menu-stamp-row {
+    margin-bottom: 1.4rem;
+    gap: 0.6rem;
+  }
+  .cafe-menu-brand-wrap {
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+  .cafe-menu-brand-frame {
+    width: 52px;
+    height: 34px;
+  }
+  .cafe-menu-title {
+    font-size: 1.55rem;
+    margin-bottom: 0.8rem;
+  }
+  .cafe-menu-lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.3rem;
+  }
+  .cafe-enter-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+}
+
+
