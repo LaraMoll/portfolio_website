@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Illustrations — Lara Mollaoglu Portfolio</title>
   <meta name="description" content="Drawings and digital art gallery by Lara Mollaoglu — character design, cyberpunk aesthetics, and poster art.">
   <link rel="icon" type="image/png" href="images/logo.png">
@@ -38,8 +38,8 @@
         </button>
 
         <!-- Palette Switcher -->
-        <button class="ctrl-btn" id="paletteToggleBtn" title="Switch between 3 curated cafe palettes" style="padding: 0.45rem 0.85rem;">
-          <span id="paletteLabel" style="font-size: 0.78rem; font-weight: 700; color: var(--text-secondary);">Strawberry Matcha</span>
+        <button class="ctrl-btn" id="paletteToggleBtn" title="Switch between 3 curated cafe palettes">
+          <span id="paletteLabel">Strawberry Matcha</span>
         </button>
 
         <button class="ctrl-btn ctrl-btn-icon" id="themeToggleBtn" aria-label="Toggle theme">
@@ -118,25 +118,130 @@
         </p>
       </div>
 
-      <!-- Empty State Canvas for Lara's Future Drawings -->
-      <div class="empty-gallery-container">
-        <div class="empty-icon-box">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-        </div>
-        <span class="hero-hand-note" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--c-rose);">sketchbook in progress ✦</span>
-        <h2 class="empty-gallery-title">Drawings & Sketches Coming Soon</h2>
-        <p class="empty-gallery-desc">
-          This gallery is kept clean and open until I add my own personal illustrations, linework studies, and character drawings. Check back soon or connect with me to see what's on my drawing tablet!
+      <!-- Featured Illustrations Gallery Grid -->
+      <div class="illustrations-grid">
+
+        <!-- Artwork 01: Karatrys -->
+        <article class="app-window illustration-card">
+          <div class="window-titlebar">
+            <div class="window-dots">
+              <span class="window-dot dot-1"></span>
+              <span class="window-dot dot-2"></span>
+              <span class="window-dot dot-3"></span>
+            </div>
+            <span class="window-title">art://sketchbook/karatrys.png</span>
+            <span class="window-badge">CHARACTER ART</span>
+          </div>
+
+          <div class="window-content illustration-card-content">
+            <div class="illustration-media-frame" 
+                 data-lightbox="true" 
+                 data-full="images/Karatrys.PNG" 
+                 data-title="Karatrys — Digital Character Illustration" 
+                 data-desc="Original character artwork celebrating graduation with iridescent feathered wings, curled ram horns, mortarboard cap, and a lily of the valley bouquet by Lara Mollaoglu."
+                 role="button" 
+                 tabindex="0" 
+                 aria-label="Click to enlarge Karatrys artwork in fullscreen">
+              <img src="images/Karatrys.PNG" alt="Karatrys digital character illustration with wings and graduation cap" class="illustration-img">
+              <div class="zoom-overlay-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Click for Fullscreen View</span>
+              </div>
+            </div>
+
+            <div class="illustration-info">
+              <div class="spotlight-header-tags">
+                <span class="tag-pill active">#CharacterArt</span>
+                <span class="tag-pill">#OriginalCharacter</span>
+                <span class="tag-pill">#DigitalIllustration</span>
+              </div>
+
+              <h2 class="illustration-title font-serif">Karatrys</h2>
+
+              <p class="illustration-desc">
+                An original character illustration celebrating graduation. Features iridescent feathery wings, spiral ram horns, pointed elf ears, a graduation mortarboard cap, and a delicate bouquet of lily of the valley flowers against a calm sky-blue backdrop.
+              </p>
+
+              <div class="illustration-action-row">
+                <button type="button" class="btn-p5 illustration-zoom-btn" 
+                        data-lightbox="true" 
+                        data-full="images/Karatrys.PNG" 
+                        data-title="Karatrys — Digital Character Illustration" 
+                        data-desc="Original character artwork celebrating graduation with iridescent feathered wings, curled ram horns, mortarboard cap, and a lily of the valley bouquet by Lara Mollaoglu.">
+                  <span>View Fullscreen &nbsp;🔍</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artwork 02: Sylvara -->
+        <article class="app-window illustration-card">
+          <div class="window-titlebar">
+            <div class="window-dots">
+              <span class="window-dot dot-1"></span>
+              <span class="window-dot dot-2"></span>
+              <span class="window-dot dot-3"></span>
+            </div>
+            <span class="window-title">art://sketchbook/sylvara_concept.png</span>
+            <span class="window-badge">CONCEPT & MODEL SHEET</span>
+          </div>
+
+          <div class="window-content illustration-card-content">
+            <div class="illustration-media-frame" 
+                 data-lightbox="true" 
+                 data-full="images/Sylvara.PNG" 
+                 data-title="Sylvara — Character Concept & Model Sheet" 
+                 data-desc="Full visual development sheet for Sylvara: character turnaround, facial details, broom prop, teacup designs, and color palette swatches by Lara Mollaoglu."
+                 role="button" 
+                 tabindex="0" 
+                 aria-label="Click to enlarge Sylvara artwork in fullscreen">
+              <img src="images/Sylvara.PNG" alt="Sylvara character concept model sheet with turnaround and color palette" class="illustration-img">
+              <div class="zoom-overlay-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Click for Fullscreen View</span>
+              </div>
+            </div>
+
+            <div class="illustration-info">
+              <div class="spotlight-header-tags">
+                <span class="tag-pill active">#ConceptArt</span>
+                <span class="tag-pill">#ModelSheet</span>
+                <span class="tag-pill">#CharacterDesign</span>
+              </div>
+
+              <h2 class="illustration-title font-serif">Sylvara</h2>
+
+              <p class="illustration-desc">
+                Full visual development and reference sheet for Sylvara, a feline-inspired cafe maid. Showcases front model turnaround, traditional orange kimono with apron, custom tiger eye study, handmade broom prop, palette swatches, and whimsical cafe teacup designs.
+              </p>
+
+              <div class="illustration-action-row">
+                <button type="button" class="btn-p5 illustration-zoom-btn" 
+                        data-lightbox="true" 
+                        data-full="images/Sylvara.PNG" 
+                        data-title="Sylvara — Character Concept & Model Sheet" 
+                        data-desc="Full visual development sheet for Sylvara: character turnaround, facial details, broom prop, teacup designs, and color palette swatches by Lara Mollaoglu.">
+                  <span>View Fullscreen &nbsp;🔍</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Continuous Sketchbook Note -->
+      <div class="cozy-note-card" style="margin-top: 1rem;">
+        <div class="cozy-note-title">more sketches on the way ✦</div>
+        <p class="cozy-note-text">
+          Drawing is where my design ideas take root. From spontaneous digital doodles and anatomy studies to fully rendered character sheets, I'm continuously updating my sketchbook with new works.
         </p>
-        <div class="empty-gallery-tags">
-          <span class="tag-pill">#DigitalIllustration</span>
-          <span class="tag-pill">#CharacterArt</span>
-          <span class="tag-pill">#FreeTimeSketches</span>
-          <span class="tag-pill">#VisualStorytelling</span>
+        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="tag-pill">🎨 #Procreate</span>
+          <span class="tag-pill">✒️ #Linework</span>
+          <span class="tag-pill">✨ #VisualExperiments</span>
+          <span class="tag-pill">☕ #CozyCreativity</span>
         </div>
       </div>
 
