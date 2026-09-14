@@ -3595,6 +3595,10 @@ h1, h2, h3, h4 {
   color: var(--c-surface);
 }
 
+.lightbox-desc:empty {
+  display: none;
+}
+
 .lightbox-close-btn {
   position: absolute;
   top: -2.8rem;
