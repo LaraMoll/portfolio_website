@@ -139,13 +139,18 @@ function initIntroModal() {
     function openIntro() {
       introModal.classList.remove('dismissing');
       introModal.classList.add('active');
+      document.body.classList.add('modal-open');
       document.body.style.overflow = 'hidden';
     }
 
     function closeIntro() {
       introModal.classList.add('dismissing');
       sessionStorage.setItem('p5_intro_seen', 'true');
-      document.body.style.overflow = '';
+      const anyModalStillOpen = document.querySelector('.cafe-custom-modal.active, .girl-slide-drawer.active, .lightbox-modal.active');
+      if (!anyModalStillOpen) {
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+      }
       setTimeout(() => {
         introModal.classList.remove('active');
         introModal.classList.remove('dismissing');
@@ -207,13 +212,18 @@ function initProjectModals() {
   function openModal(modal) {
     if (!modal) return;
     modal.classList.add('active');
+    document.body.classList.add('modal-open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal(modal) {
     if (!modal) return;
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    const anyModalStillOpen = document.querySelector('.cafe-custom-modal.active, .girl-slide-drawer.active, .lightbox-modal.active, .p5-intro-overlay.active');
+    if (!anyModalStillOpen) {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+    }
   }
 
   if (openStoryBtn && storyModal) {
@@ -510,7 +520,11 @@ function initLightbox() {
 
   function closeLightbox() {
     lightbox.classList.remove('active');
-    document.body.style.overflow = '';
+    const anyModalStillOpen = document.querySelector('.cafe-custom-modal.active, .girl-slide-drawer.active, .lightbox-modal.active, .p5-intro-overlay.active');
+    if (!anyModalStillOpen) {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+    }
   }
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
@@ -541,6 +555,7 @@ function openLightbox(src, title, desc) {
   if (lightboxDesc) lightboxDesc.textContent = desc || '';
 
   lightbox.classList.add('active');
+  document.body.classList.add('modal-open');
   document.body.style.overflow = 'hidden';
 }
 
@@ -782,6 +797,7 @@ function initHeroProjectSwitcher() {
 
     projectDrawer.classList.add('active');
     if (drawerBackdrop) drawerBackdrop.classList.add('active');
+    document.body.classList.add('modal-open');
     document.body.style.overflow = 'hidden';
     isPaused = true;
   }
@@ -789,7 +805,11 @@ function initHeroProjectSwitcher() {
   function closeProjectDrawer() {
     if (projectDrawer) projectDrawer.classList.remove('active');
     if (drawerBackdrop) drawerBackdrop.classList.remove('active');
-    document.body.style.overflow = '';
+    const anyModalStillOpen = document.querySelector('.cafe-custom-modal.active, .girl-slide-drawer.active, .lightbox-modal.active, .p5-intro-overlay.active');
+    if (!anyModalStillOpen) {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+    }
     isPaused = false;
   }
 
