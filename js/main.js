@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initHeroProjectSwitcher();
   initCozyFarmSpotlight();
+  initTravelPlannerSpotlight();
+  initMoraSpotlight();
   initContactPage();
 });
 
@@ -258,7 +260,94 @@ function initProjectModals() {
     closeCozyGalleryBtn.addEventListener('click', () => closeModal(cozyGalleryModal));
   }
 
-  const allModals = [storyModal, galleryModal, cozyStoryModal, cozyGalleryModal];
+  const travelStoryModal = document.getElementById('travelPlannerStoryModal');
+  const travelGalleryModal = document.getElementById('travelPlannerGalleryModal');
+
+  const openTravelStoryBtn = document.getElementById('openTravelStoryModalBtn');
+  const openTravelGalleryBtn = document.getElementById('openTravelGalleryModalBtn');
+  const openTravelGalleryCardTrigger = document.getElementById('openTravelGalleryCardTrigger');
+
+  const closeTravelStoryBtn = document.getElementById('closeTravelStoryModalBtn');
+  const closeTravelGalleryBtn = document.getElementById('closeTravelGalleryModalBtn');
+
+  const openTravelGalleryFromStoryBtn = document.getElementById('openTravelGalleryFromStoryBtn');
+  const openTravelStoryFromGalleryBtn = document.getElementById('openTravelStoryFromGalleryBtn');
+
+  if (openTravelStoryBtn && travelStoryModal) {
+    openTravelStoryBtn.addEventListener('click', () => openModal(travelStoryModal));
+  }
+  if (openTravelGalleryBtn && travelGalleryModal) {
+    openTravelGalleryBtn.addEventListener('click', () => openModal(travelGalleryModal));
+  }
+  if (openTravelGalleryCardTrigger && travelGalleryModal) {
+    openTravelGalleryCardTrigger.addEventListener('click', () => openModal(travelGalleryModal));
+  }
+  if (closeTravelStoryBtn && travelStoryModal) {
+    closeTravelStoryBtn.addEventListener('click', () => closeModal(travelStoryModal));
+  }
+  if (closeTravelGalleryBtn && travelGalleryModal) {
+    closeTravelGalleryBtn.addEventListener('click', () => closeModal(travelGalleryModal));
+  }
+
+  // Cross modal transitions
+  if (openTravelGalleryFromStoryBtn && travelGalleryModal && travelStoryModal) {
+    openTravelGalleryFromStoryBtn.addEventListener('click', () => {
+      closeModal(travelStoryModal);
+      setTimeout(() => openModal(travelGalleryModal), 200);
+    });
+  }
+  if (openTravelStoryFromGalleryBtn && travelStoryModal && travelGalleryModal) {
+    openTravelStoryFromGalleryBtn.addEventListener('click', () => {
+      closeModal(travelGalleryModal);
+      setTimeout(() => openModal(travelStoryModal), 200);
+    });
+  }
+
+  // Mora x Fightclub Modals
+  const moraStoryModal = document.getElementById('moraStoryModal');
+  const moraGalleryModal = document.getElementById('moraGalleryModal');
+
+  const openMoraStoryBtn = document.getElementById('openMoraStoryModalBtn');
+  const openMoraGalleryBtn = document.getElementById('openMoraGalleryModalBtn');
+  const openMoraGalleryCardTrigger = document.getElementById('openMoraGalleryCardTrigger');
+
+  const closeMoraStoryBtn = document.getElementById('closeMoraStoryModalBtn');
+  const closeMoraGalleryBtn = document.getElementById('closeMoraGalleryModalBtn');
+
+  const openMoraGalleryFromStoryBtn = document.getElementById('openMoraGalleryFromStoryBtn');
+  const openMoraStoryFromGalleryBtn = document.getElementById('openMoraStoryFromGalleryBtn');
+
+  if (openMoraStoryBtn && moraStoryModal) {
+    openMoraStoryBtn.addEventListener('click', () => openModal(moraStoryModal));
+  }
+  if (openMoraGalleryBtn && moraGalleryModal) {
+    openMoraGalleryBtn.addEventListener('click', () => openModal(moraGalleryModal));
+  }
+  if (openMoraGalleryCardTrigger && moraGalleryModal) {
+    openMoraGalleryCardTrigger.addEventListener('click', () => openModal(moraGalleryModal));
+  }
+  if (closeMoraStoryBtn && moraStoryModal) {
+    closeMoraStoryBtn.addEventListener('click', () => closeModal(moraStoryModal));
+  }
+  if (closeMoraGalleryBtn && moraGalleryModal) {
+    closeMoraGalleryBtn.addEventListener('click', () => closeModal(moraGalleryModal));
+  }
+
+  // Cross modal transitions for Mora
+  if (openMoraGalleryFromStoryBtn && moraGalleryModal && moraStoryModal) {
+    openMoraGalleryFromStoryBtn.addEventListener('click', () => {
+      closeModal(moraStoryModal);
+      setTimeout(() => openModal(moraGalleryModal), 200);
+    });
+  }
+  if (openMoraStoryFromGalleryBtn && moraStoryModal && moraGalleryModal) {
+    openMoraStoryFromGalleryBtn.addEventListener('click', () => {
+      closeModal(moraGalleryModal);
+      setTimeout(() => openModal(moraStoryModal), 200);
+    });
+  }
+
+  const allModals = [storyModal, galleryModal, cozyStoryModal, cozyGalleryModal, travelStoryModal, travelGalleryModal, moraStoryModal, moraGalleryModal];
   allModals.forEach(modal => {
     if (!modal) return;
     modal.addEventListener('click', (e) => {
@@ -306,8 +395,8 @@ function initProjectSpotlight() {
     brandbookPage = page;
 
     const pageImgSrc = `images/blikje/brandbook_page_${brandbookPage}.png`;
-    const title = `Overdrive 2.4 — Brandbook Page ${brandbookPage} of ${totalPages}`;
-    const desc = `Cyberpunk Energy Drink Brand Guidelines — Page ${brandbookPage} of ${totalPages}`;
+    const title = `Overdrive 2.4 : Brandbook Page ${brandbookPage} of ${totalPages}`;
+    const desc = `Cyberpunk Energy Drink Brand Guidelines : Page ${brandbookPage} of ${totalPages}`;
 
     mainImg.style.opacity = '0';
     mainImg.style.transform = 'scale(0.96)';
@@ -463,6 +552,137 @@ function initCozyFarmSpotlight() {
 }
 
 /* ==========================================================================
+   WANDERLUST TRAVEL PLANNER VISUAL GALLERY SPOTLIGHT
+   ========================================================================== */
+function initTravelPlannerSpotlight() {
+  const travelMainImg = document.getElementById('travelMainImg');
+  const travelStage = document.getElementById('travelStageFrame');
+  const travelThumbs = document.querySelectorAll('#travelThumbStrip .thumb-item');
+
+  if (!travelMainImg || !travelStage) return;
+
+  travelThumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      travelThumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+
+      const newSrc = thumb.getAttribute('data-img');
+      const newTitle = thumb.getAttribute('data-title') || 'Travel Planner Visual';
+      const newDesc = thumb.getAttribute('data-desc') || '';
+
+      travelMainImg.style.opacity = '0';
+      travelMainImg.style.transform = 'scale(0.96)';
+
+      setTimeout(() => {
+        travelMainImg.src = newSrc;
+        travelMainImg.setAttribute('data-full', newSrc);
+        travelMainImg.setAttribute('data-title', newTitle);
+        travelMainImg.setAttribute('data-desc', newDesc);
+        travelMainImg.style.opacity = '1';
+        travelMainImg.style.transform = 'scale(1)';
+      }, 120);
+    });
+  });
+
+  travelStage.addEventListener('click', () => {
+    const src = travelMainImg.src;
+    const title = travelMainImg.getAttribute('data-title') || 'Wanderlust & Sunshine';
+    const desc = travelMainImg.getAttribute('data-desc') || 'Boutique Travel Planner & AI Concierge';
+    openLightbox(src, title, desc);
+  });
+}
+
+/* ==========================================================================
+   MORA X FIGHTCLUB 1-APRIL GOSSIP MAGAZINE & SKETCHES GALLERY SPOTLIGHT
+   ========================================================================== */
+function initMoraSpotlight() {
+  const moraMainImg = document.getElementById('moraMainImg');
+  const moraStage = document.getElementById('moraStageFrame');
+  const moraThumbs = document.querySelectorAll('.mora-thumb-item');
+
+  const modeMagazineBtn = document.getElementById('moraModeMagazineBtn');
+  const modeSketchesBtn = document.getElementById('moraModeSketchesBtn');
+  const stripMagazine = document.getElementById('moraThumbStripMagazine');
+  const stripSketches = document.getElementById('moraThumbStripSketches');
+
+  if (!moraMainImg || !moraStage) return;
+
+  function switchStageImage(newSrc, newTitle, newDesc) {
+    moraMainImg.style.opacity = '0';
+    moraMainImg.style.transform = 'scale(0.96)';
+
+    setTimeout(() => {
+      moraMainImg.src = newSrc;
+      moraMainImg.setAttribute('data-full', newSrc);
+      moraMainImg.setAttribute('data-title', newTitle);
+      moraMainImg.setAttribute('data-desc', newDesc);
+      moraMainImg.style.opacity = '1';
+      moraMainImg.style.transform = 'scale(1)';
+    }, 120);
+  }
+
+  if (modeMagazineBtn && modeSketchesBtn && stripMagazine && stripSketches) {
+    modeMagazineBtn.addEventListener('click', () => {
+      modeMagazineBtn.classList.add('active');
+      modeSketchesBtn.classList.remove('active');
+      stripMagazine.style.display = 'grid';
+      stripSketches.style.display = 'none';
+
+      const activeThumb = stripMagazine.querySelector('.mora-thumb-item.active') || stripMagazine.querySelector('.mora-thumb-item');
+      if (activeThumb) activeThumb.click();
+    });
+
+    modeSketchesBtn.addEventListener('click', () => {
+      modeSketchesBtn.classList.add('active');
+      modeMagazineBtn.classList.remove('active');
+      stripMagazine.style.display = 'none';
+      stripSketches.style.display = 'grid';
+
+      const activeThumb = stripSketches.querySelector('.mora-thumb-item.active') || stripSketches.querySelector('.mora-thumb-item');
+      if (activeThumb) activeThumb.click();
+    });
+  }
+
+  moraThumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const parentStrip = thumb.closest('.mora-thumb-strip');
+      if (parentStrip) {
+        parentStrip.querySelectorAll('.mora-thumb-item').forEach(t => t.classList.remove('active'));
+      } else {
+        moraThumbs.forEach(t => t.classList.remove('active'));
+      }
+      thumb.classList.add('active');
+
+      const newSrc = thumb.getAttribute('data-img');
+      const newTitle = thumb.getAttribute('data-title') || 'Juicy Snacks Magazine Spread';
+      const newDesc = thumb.getAttribute('data-desc') || '';
+
+      switchStageImage(newSrc, newTitle, newDesc);
+    });
+  });
+
+  moraStage.addEventListener('click', () => {
+    const src = moraMainImg.src;
+    const title = moraMainImg.getAttribute('data-title') || 'Juicy Snacks Tabloid Spread';
+    const desc = moraMainImg.getAttribute('data-desc') || 'Mora x Fightclub 1-April Campaign';
+    openLightbox(src, title, desc);
+  });
+
+  // Lightbox click for inline figures in Mora case study
+  const storyFigures = document.querySelectorAll('.mora-story-figure');
+  storyFigures.forEach(fig => {
+    fig.addEventListener('click', () => {
+      const src = fig.getAttribute('data-full');
+      const title = fig.getAttribute('data-title') || 'Phase 1 Ideation Concept';
+      const desc = fig.getAttribute('data-desc') || '';
+      if (src) {
+        openLightbox(src, title, desc);
+      }
+    });
+  });
+}
+
+/* ==========================================================================
    ILLUSTRATION GALLERY FILTER
    ========================================================================== */
 function initGalleryFilter() {
@@ -600,7 +820,7 @@ function initHeroProjectSwitcher() {
   const projects = [
     {
       id: 'overdrive',
-      badgeText: 'PROJECT 01 / 02',
+      badgeText: 'PROJECT 01 / 04',
       specialText: 'Visual Storytelling • Character Art • 360° Packaging',
       artTag: 'EXHIBIT // 01',
       artLabel: 'identity_series // 2.4',
@@ -623,7 +843,7 @@ function initHeroProjectSwitcher() {
     },
     {
       id: 'cozy_farm',
-      badgeText: 'PROJECT 02 / 02',
+      badgeText: 'PROJECT 02 / 04',
       specialText: 'Python Programming • Pixel Art • Character Customizer',
       artTag: 'EXHIBIT // 02',
       artLabel: 'game_series // cozy_farm',
@@ -643,6 +863,52 @@ function initHeroProjectSwitcher() {
       specApp: 'Text RPG, Logic Engine & Character Creator',
       actionUrl: 'projects.html',
       actionLabel: 'EXPLORE COZY FARM CASE STUDY ➔'
+    },
+    {
+      id: 'travel_planner',
+      badgeText: 'PROJECT 03 / 04',
+      specialText: 'Boutique Travel Planning • Scrapbook Journals • AI Concierge',
+      artTag: 'EXHIBIT // 03',
+      artLabel: 'travel_series // wanderlust',
+      imgSrc: 'images/travel_planner/travel_hero_preview.png',
+      imgAlt: 'Wanderlust & Sunshine Boutique Travel Planner Web Interface',
+      isPixelated: false,
+      captionTitle: 'Wanderlust & Sunshine • Travel AI',
+      // Drawer content
+      drawerBadge: 'EXHIBIT // 03',
+      drawerHeading: 'Wanderlust & Sunshine // Travel Planner',
+      drawerTags: ['#TravelPlanner', '#AIChatbot', '#UIUXDesign', '#SeniorAccessible'],
+      drawerHeadline: 'Boutique Travel Planner & AI Concierge',
+      drawerSubhead: 'Custom Scrapbook Itineraries & Plannie AI • Avans CMD CT2',
+      drawerDesc: 'A boutique summer travel planner designed with warm, sun-soaked editorial styling and senior-friendly accessibility. Combines handcrafted tactile scrapbook journals (with Polaroid keepsakes and handwritten agendas) with <strong>Plannie</strong>, an intelligent AI travel concierge providing live destination budgets, weather parameters, and valutas.',
+      specProject: 'Wanderlust & Sunshine',
+      specMedium: 'HTML5, CSS3, JavaScript, AI Concierge',
+      specApp: 'Accessible Web App, Scrapbooks & Chatbot',
+      actionUrl: 'projects.html',
+      actionLabel: 'EXPLORE TRAVEL PLANNER CASE STUDY ➔'
+    },
+    {
+      id: 'mora',
+      badgeText: 'PROJECT 04 / 04',
+      specialText: 'Viral Brand Campaign • 1-April Prank • 8-Page Tabloid Magazine',
+      artTag: 'EXHIBIT // 04',
+      artLabel: 'campaign_series // juicy_snacks',
+      imgSrc: 'images/mora/mora_page_1.png',
+      imgAlt: 'Juicy Snacks Mora 1-April Gossip Magazine Cover',
+      isPixelated: false,
+      captionTitle: 'Juicy Snacks • Cora van Mora',
+      // Drawer content
+      drawerBadge: 'EXHIBIT // 04',
+      drawerHeading: 'Mora x Fightclub // Juicy Snacks',
+      drawerTags: ['#FightclubAgency', '#MoraNederland', '#ViralCampaign', '#EditorialDesign'],
+      drawerHeadline: 'Juicy Snacks // Cora’s Secret Romance',
+      drawerSubhead: '1-April Viral Campaign & 8-Page Tabloid Magazine • Fightclub Breda',
+      drawerDesc: 'Created for a client brief from creative agency <strong>Fightclub</strong> in Breda. Challenged to design an original April Fools campaign, I chose <strong>Mora</strong> and developed a funny romantic scandal around mascot <strong>Cora van Mora</strong>. I designed <strong>Juicy Snacks</strong>, a complete 8-page gossip magazine featuring paparazzi scoops, dating rivals, leaked chats, and snack puzzles.',
+      specProject: 'Mora x Fightclub 1-April',
+      specMedium: 'Editorial Tabloid Design & Viral Campaign',
+      specApp: '8-Page Magazine, Print Mockups & Pitch Deck',
+      actionUrl: 'projects.html',
+      actionLabel: 'EXPLORE MORA CASE STUDY ➔'
     }
   ];
 
